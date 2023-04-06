@@ -21,11 +21,11 @@
         height="200px"
       />
       <p id="p1">Paragraph 1</p>
-      <p>Paragraph 2</p>
+      <p id="p2">Paragraph 2</p>
       <p>Paragraph 3</p>
-      <p>Paragraph 4</p>
+      <p id="p4">Paragraph 4</p>
       <h3 class="h3">ini list</h3>
-      <ul id="mylist">
+      <ul id="mylist" class="list-vertical">
         <li>HTML</li>
         <li>CSS</li>
         <li>JavaScript</li>
@@ -34,13 +34,38 @@
       </ul>
     </div>
 
+    <a
+      href="https://www.w3schools.com/jsref/jsref_obj_string.asp"
+      target="_blank"
+      id="w3sc"
+    ></a>
     <button id="btnL">Jumlah p</button>
     <br />
     <form id="myForm">
       <input type="text" id="input" />
-      <button type="submit">Submit</button>
+      <button id="submity" type="submit">Submit</button>
     </form>
     <div id="result"></div>
+    <br />
+    <br />
+    <div>
+      <input type="radio" name="size" value="XL" id="xl" />
+      <label for="xl">XL</label>
+    </div>
+    <div>
+      <input type="radio" name="size" value="XXL" id="xxl" />
+      <label for="xxl">XXL</label>
+    </div>
+    <p>
+      <button id="btn">Lihat Ukuran Jumbo</button>
+    </p>
+
+    <p id="output"></p>
+    <br /><br />
+
+    <label for="accept">
+      <input type="checkbox" id="accept" name="accept" value="yes" /> Accept
+    </label>
 
     <script src="app.js"></script>
     <!-- <script>

@@ -38,48 +38,62 @@ const myImg = document.getElementById('img2');
 myImg.setAttribute('src', 'img/cat.jpg');
 
 
-// Section 3 - Selecting Elements
-// Contoh 1: Memilih semua elemen dengan tag 'p'
-// const elems = document.getElementsByTagName('p');
-// for (let i = 0; i < elems.length; i++) {
-//   elems[i].style.color = 'red';
-// }
+// // Section 5 - Working with Attributes--------------------------------
+// // Contoh 1: Get
+let link = document.querySelector('#w3sc');
+        if (link) {
+            let target = link.getAttribute('target');
+            console.log(target);
+        }
 
-// // Contoh 2: Memilih elemen dengan kelas 'intro'
-// const elem = document.getElementsByClassName('intro')[0];
-// elem.style.fontWeight = 'bold';
-
-// // Contoh 3: Memilih elemen berdasarkan query selector
-// const elem = document.querySelector('#header .title');
-// elem.style.fontSize = '24px';
+// Contoh 2: Menghapus elemen tertentu dari halaman HTML
+const elRem = document.getElementById('p4');
+elRem.parentNode.removeChild(elRem);
 
 
+// Section 6 - Manipulating Element’s Styles--------------------------------
+// Contoh 1: Classname
+let menu = document.querySelector('#mylist');
+console.log(menu.className);
 
-// // Section 5 - Creating and Removing Elements
-// // Contoh 1: Membuat elemen baru dan menambahkannya ke dalam halaman HTML
-// const newElem = document.createElement('div');
-// newElem.innerHTML = '<p>Contoh elemen baru</p>';
-// document.body.appendChild(newElem);
-
-// // Contoh 2: Menghapus elemen tertentu dari halaman HTML
-// const elem = document.getElementById('header');
-// elem.parentNode.removeChild(elem);
-
+// Contoh 2: Mengganti style
+let p = document.querySelector('#p2');
+p.style.color = 'green';
+p.style.fontWeight = 'bold';
 
 
-// // Section 7 - Events:
-// // Contoh 1: Menangkap event pada tombol dan mengubah isi teks
-// const btn = document.getElementById('btn');
-// btn.addEventListener('click', function() {
-// const elem = document.getElementById('header');
-// elem.innerHTML = 'Hello, world!';
-// });
+// Section 7 - Events:
+// Contoh 1: Menunjukkan bahwa button diklik
+let btn = document.querySelector('#submity');
 
-// // Contoh 2: Menangkap event pada form dan menampilkan hasil
-// const form = document.getElementById('myForm');
-// form.addEventListener('submit', function(e) {
-// e.preventDefault();
-// const input = document.getElementById('input');
-// const result = document.getElementById('result');
-// result.innerHTML = input.value;
-// });
+btn.onclick = (event) => {
+    console.log('clicked');
+};
+
+// Contoh 2: Menunjukkan keyboard events
+let textBox = document.getElementById('input');
+        textBox.addEventListener('keydown', (event) => {
+            console.log(`key=${event.key},code=${event.code}`);
+
+        });
+
+
+// Section 8 - Events:
+// Contoh 1: Menunjukkan hasil click
+const btn = document.querySelector('#btn');        
+const radioButtons = document.querySelectorAll('input[name="size"]');
+btn.addEventListener("click", () => {
+    let selectedSize;
+    for (const radioButton of radioButtons) {
+        if (radioButton.checked) {
+            selectedSize = radioButton.value;
+            break;
+        }
+    }
+    // show the output:
+    output.innerText = selectedSize ? `You selected ${selectedSize}` : `You haven't selected any size`;
+});
+
+// Contoh 2: Menujukkan checkbox
+const cb = document.querySelector('#accept');
+console.log(cb.checked); 
